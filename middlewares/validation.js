@@ -5,6 +5,7 @@ const validation = (schema) => {
         const { error } = schema.validate(req.body);
         if (error) {
             throw createError(400, error.message);
+
         }
         next();
     };
