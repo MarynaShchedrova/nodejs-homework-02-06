@@ -1,4 +1,5 @@
-const { Contact } = require("../../models/contacts");
+const { Contact } = require("../../models/contact");
+
 
 const removeById = async (req, res, next) => {
     const { id } = req.params;
