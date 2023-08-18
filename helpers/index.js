@@ -6,4 +6,5 @@ module.exports = {
     ctrlWrapper,
     handleErrors,
     RequestError,
+
 };

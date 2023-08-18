@@ -3,6 +3,7 @@ const Joi = require("joi");
 const { handleErrors } = require("../helpers");
 
 const contactSchema = new Schema(
+
   {
     name: {
       type: String,
@@ -22,11 +23,13 @@ const contactSchema = new Schema(
       type: Boolean,
       default: false,
     },
+
     owner: {
       type: Schema.Types.ObjectId,
       ref: "user",
       required: true,
     },
+
   },
   { versionKey: false, timestamps: true }
 );
@@ -34,6 +37,7 @@ const contactSchema = new Schema(
 contactSchema.post("save", handleErrors);
 
 const addSchema = Joi.object({
+
   name: Joi.string()
     .required()
     .messages({ "any.required": "Missing field name" }),
@@ -57,3 +61,4 @@ const schemas = { addSchema, updateFavoriteSchema };
 const Contact = model("contact", contactSchema);
 
 module.exports = { Contact, schemas };
+

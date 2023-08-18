@@ -1,7 +1,9 @@
 const express = require("express");
+
 const { validation, isValidId, authenticate } = require("../../middlewares");
 const { ctrlWrapper } = require("../../helpers");
 const { schemas } = require("../../models/contact");
+
 const { contacts: ctrl } = require("../../controllers");
 
 const router = express.Router();
@@ -36,3 +38,4 @@ router.patch(
 router.delete("/:id", authenticate, isValidId, ctrlWrapper(ctrl.removeById));
 
 module.exports = router;
+
