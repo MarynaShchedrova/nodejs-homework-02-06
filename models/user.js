@@ -21,8 +21,12 @@ const userSchema = new Schema(
             enum: subscription,
             default: "starter",
         },
-        token: String,
-        default: "",
+        token: { type: String, default: "" },
+        avatartURL: {
+            type: String,
+            required: true,
+        },
+
     },
     { versionKey: false, timestamps: true }
 );

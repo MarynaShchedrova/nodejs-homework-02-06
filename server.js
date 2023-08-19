@@ -10,8 +10,7 @@ mongoose
   .then(() => {
     app.listen(PORT);
     console.log("Database connection successful");
-    console.log(DB_HOST);
-    console.log(PORT);
+
 
   })
   .catch((error) => {

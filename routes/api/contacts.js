@@ -3,7 +3,6 @@ const express = require("express");
 const { validation, isValidId, authenticate } = require("../../middlewares");
 const { ctrlWrapper } = require("../../helpers");
 const { schemas } = require("../../models/contact");
-
 const { contacts: ctrl } = require("../../controllers");
 
 const router = express.Router();
@@ -27,6 +26,7 @@ router.put(
   ctrlWrapper(ctrl.updateById)
 );
 
+
 router.patch(
   "/:id/favorite",
   authenticate,
@@ -34,6 +34,7 @@ router.patch(
   validation(schemas.updateFavoriteSchema),
   ctrlWrapper(ctrl.updateFavorite)
 );
+
 
 router.delete("/:id", authenticate, isValidId, ctrlWrapper(ctrl.removeById));
 

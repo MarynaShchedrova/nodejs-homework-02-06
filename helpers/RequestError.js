@@ -13,3 +13,4 @@ const RequestError = (status, message = messages[status]) => {
 };
 
 module.exports = RequestError;
+
