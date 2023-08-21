@@ -1,5 +1,7 @@
 const express = require("express");
+
 const { validation, authenticate, upload } = require("../../middlewares");
+
 const { ctrlWrapper } = require("../../helpers");
 const ctrl = require("../../controllers/auth");
 const { schemas } = require("../../models/user");
@@ -12,6 +14,7 @@ router.post(
     ctrlWrapper(ctrl.register)
 );
 
+
 router.get("/verify/:verificationToken", ctrlWrapper(ctrl.verify));
 
 router.post(
@@ -19,6 +22,7 @@ router.post(
     validation(schemas.verifyEmailchema),
     ctrlWrapper(ctrl.resendVerify)
 );
+
 
 router.post("/login", validation(schemas.loginSchema), ctrlWrapper(ctrl.login));
 
@@ -31,11 +35,13 @@ router.patch(
     validation(schemas.subscrSchema),
     ctrlWrapper(ctrl.updateSub)
 );
+
 router.patch(
     "/avatars",
     authenticate,
     upload.single("avatar"),
     ctrlWrapper(ctrl.updateAvatar)
 );
+
 
 module.exports = router;

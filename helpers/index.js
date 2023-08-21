@@ -1,8 +1,10 @@
 const handleErrors = require("./handleErrors");
 const ctrlWrapper = require("./ctrlWrapper");
 const RequestError = require("./RequestError");
+
 const sendEmail = require("./sendEmail");
 const createVerifyEmail = require("./createVerifyEmail");
+
 
 module.exports = {
     ctrlWrapper,
@@ -10,4 +12,5 @@ module.exports = {
     RequestError,
     sendEmail,
     createVerifyEmail,
+
 };

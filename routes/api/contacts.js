@@ -1,4 +1,5 @@
 const express = require("express");
+
 const { validation, isValidId, authenticate } = require("../../middlewares");
 const { ctrlWrapper } = require("../../helpers");
 const { schemas } = require("../../models/contact");
@@ -25,6 +26,7 @@ router.put(
   ctrlWrapper(ctrl.updateById)
 );
 
+
 router.patch(
   "/:id/favorite",
   authenticate,
@@ -33,6 +35,8 @@ router.patch(
   ctrlWrapper(ctrl.updateFavorite)
 );
 
+
 router.delete("/:id", authenticate, isValidId, ctrlWrapper(ctrl.removeById));
 
 module.exports = router;
+
