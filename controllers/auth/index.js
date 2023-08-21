@@ -5,6 +5,10 @@ const logout = require("./logout");
 const updateSub = require("./updateSub");
 const updateAvatar = require("./updateAvatar");
 
+const verify = require("./verify");
+const resendVerify = require("./resendVerify");
+
+
 module.exports = {
     register,
     login,
@@ -12,5 +16,7 @@ module.exports = {
     logout,
     updateSub,
     updateAvatar,
+    verify,
+    resendVerify,
 };
 
